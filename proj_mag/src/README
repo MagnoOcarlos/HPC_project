@@ -1,0 +1,30 @@
+########################################################################
+
+
+			Projeto HPC 1
+	O problema da Grande esfera para simulações de raios cósmicos
+
+
+
+#######################################################################
+
+
+
+
+Para rodar o programa siga as instruções:
+
+
+1) Digite os comandos dentro da pasta src/ :
+
+		make
+		
+		./main
+
+
+
+
+
+
+
+
+
