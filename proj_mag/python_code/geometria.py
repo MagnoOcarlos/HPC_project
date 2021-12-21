@@ -131,4 +131,3 @@ for i in range(0,3072):
 
 
 np.savetxt(sys.argv[3], final_eventos,comments ='', fmt='%f', delimiter="\t", header="D	\tz	\tSN	\tID	\tE\t	X\t	Y\t	Z	\tPx\t	Py\t	Pz\t	SN0\t	ID0\t	E0\t	X0\t	Y0\t	Z0\t	P0x\t	P0y\t	P0z\t	SN1\t	ID1\t	E1\t	X1\t	Y1\t	Z1\t	P1x\t	P1y\t	P1z\t	W\t Ang_linha_de_visada  \t Dist_ang")
-np.savetxt(sys.argv[4], final_cone,comments ='', fmt='%f', delimiter="\t", header="D	\tz	\tSN	\tID	\tE\t	X\t	Y\t	Z	\tPx\t	Py\t	Pz\t	SN0\t	ID0\t	E0\t	X0\t	Y0\t	Z0\t	P0x\t	P0y\t	P0z\t	SN1\t	ID1\t	E1\t	X1\t	Y1\t	Z1\t	P1x\t	P1y\t	P1z\t	W\t Ang_linha_de_visada ")
