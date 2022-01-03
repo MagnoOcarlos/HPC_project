@@ -68,8 +68,8 @@ using namespace std;
 		double inner, strenu,strenv;
 		inner= u[0]*v[0]+ u[1]*v[1]+u[2]*v[2];
 
-		strenu= sqrt(pow(u[0],2) + u[1]*u[1]+u[2]*u[2];
-		strenv= sqrt(v[0]*v[0] + v[1]*v[1]+v[2]*v[2]);
+		strenu= sqrt(pow(u[0],2) + pow(u[1],2)+pow(u[2],2));
+		strenv= sqrt(pow(v[0],2) + pow(v[1],2)+pow(v[2],2));
 		
 		return( acos(inner/(strenu*strenv)));
 	}
