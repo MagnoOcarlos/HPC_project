@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <sting.h>
+#include <stdlib.h>
 #include <math.h>
 #include "Geometry.h"
 #include "Sphere.h"
@@ -68,8 +70,8 @@ using namespace std;
 		double inner, strenu,strenv;
 		inner= u[0]*v[0]+ u[1]*v[1]+u[2]*v[2];
 
-		strenu= sqrt(pow(u[0],2) + pow(u[1],2)+pow(u[2],2));
-		strenv= sqrt(pow(v[0],2) + pow(v[1],2)+pow(v[2],2));
+		strenu= sqrt(u[0]*u[0] + u[1]*u[1] + u[2]*u[2]);
+		strenv= sqrt(v[0]*v[2] + v[1]*v[1]+ v[2]*v[2]);
 		
 		return( acos(inner/(strenu*strenv)));
 	}
@@ -90,7 +92,10 @@ using namespace std;
 		pixel = getPixel();
 		u=(double *)malloc(3*sizeof(double));
 		v=(double *)malloc(3*sizeof(double));
-			
+		
+		#pragma omp parallel private(i,j,l,u,v) shared(pixel,data)
+		{
+		#pragma omp for collapse(3)		
 		for(i=0;i<=0;i+=10){
 
 			for(j=0;j<rowsp;j++)
@@ -121,7 +126,7 @@ using namespace std;
 				}
 						
 		}
-
+		}
 		free(u);
 		free(v);
 	}

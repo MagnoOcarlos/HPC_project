@@ -1,8 +1,11 @@
-#include<iostream>
-#include<string>
-#include<fstream>
-#include<math.h>
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <math.h>
+#include <string.h>
+#include <stdlib.h>
 
+#define pi 3.141592653589793
 using namespace std;
 #include "Sphere.h"
 
@@ -22,12 +25,11 @@ using namespace std;
 
 
 	}
+
+
 	double Sphere::getRadians( double degrees){
-	
-		double pi;
-		pi = acos(-1);
 		return( (degrees * pi)/ 180);
-	}	
+	}
 
 	void Sphere::count(string &inputfile,int *rows, int *cols){
 		
