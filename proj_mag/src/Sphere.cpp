@@ -88,7 +88,7 @@ using namespace std;
 		  	for(j=0;j<cols;j+=1){
 				
 				fscanf(pf,"%lf",&aux);
-				*(*(M+i)+(j-1))=aux;
+				*(*(M+i)+j)=aux;
 			
 
 		    	}
