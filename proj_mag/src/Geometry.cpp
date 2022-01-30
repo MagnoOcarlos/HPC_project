@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <sting.h>
+#include <string.h>
 #include <stdlib.h>
 #include <math.h>
 #include "Geometry.h"
@@ -86,14 +86,15 @@ using namespace std;
 		string name1=n1;
 		string name2=n2;
 
-		count(name1,&rowsd,&colsd);
 		count(name2,&rowsp,&colsp);
-		
+		count(name1,&rowsd,&colsd);
+
 		pixel = getPixel();
 		u=(double *)malloc(3*sizeof(double));
 		v=(double *)malloc(3*sizeof(double));
-		
-		#pragma omp parallel private(i,j,l,u,v) shared(pixel,data)
+
+
+		#pragma omp parallel private(u,v,rowsd,i,j,l) shared(pixel,data,rowsp)		
 		{
 		#pragma omp for collapse(3)		
 		for(i=0;i<=0;i+=10){
@@ -120,9 +121,9 @@ using namespace std;
 						if(anglesBetweenVec(u,v)<=getRadians(0.15))
 							writeResult(data[l][4],false,i);
 											
-					}
+				
 
-						
+					}		
 				}
 						
 		}
